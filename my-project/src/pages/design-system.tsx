@@ -6,15 +6,15 @@ import { Spinner } from "@/ui/design-system/spinner/spinner";
 import { Typography } from "@/ui/design-system/Typography/Typography";
 import { Container } from "@/ui/components/container/container";
 import { RiUser6Fill } from "react-icons/ri";
+import { Layout } from "@/ui/components/layout/layout";
 
 export default function DesignSystem() {
     return(
         <>
         <Seo title="design" description="Description..."/>
     
-    <Navigation/>
-
-     <Container className="py-10 space-y-10">  
+        <Layout>
+             <Container className="py-10 space-y-5">  
       {/*Typography*/}
       <div className="space-y-5">
         <Typography>Marsa Maroc</Typography>
@@ -97,7 +97,10 @@ export default function DesignSystem() {
      <Button size="large" variant="ico" icon={{ icon: RiUser6Fill }} />
      </div>
   
-   </Container>
+             </Container>
+        </Layout>
+
+    
         </>
     )
 }

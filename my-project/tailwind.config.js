@@ -11,13 +11,13 @@ module.exports = {
           300:"#BBACAC",
           400:"#BF3030",
           DEFAULT:"#BB0B0B",
-          600:"#5658CB",
+          600:"#C60800",
         },
         secondary:{
-          200:"#eaf8f4",
-          300:"#bfe9de",
-          400:"#56c4a7",
-          DEFAULT:"#2AB691",
+          200:"#01D758",
+          300:"#F4661B",
+          400:"#C60800",
+          DEFAULT:"#C60800",
           600:"#26a482",
         },
         gray:{
@@ -25,10 +25,15 @@ module.exports = {
           500:"#e5e5e5",
           600:"#b2b2b2",
           700:"#808080",
-          800:"#D6EAEE",
+          800:"#707070",
           900:"#303030",
           DEFAULT:"#130E0A",
           
+        },
+        alert:{
+          danger: "#C60800",
+          success: "#01D758",
+          warning: "#F4661B",
         },
       },
  fontSize: {

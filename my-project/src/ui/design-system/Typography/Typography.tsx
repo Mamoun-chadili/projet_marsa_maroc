@@ -26,7 +26,7 @@ interface Props {
     |"p"
     |"div"
     |"span";
-    theme?: "black" | "gray" | "white" | "primary" | "secondary";
+    theme?: "black" | "gray" | "white" | "primary" | "secondary" | "danger" | "success" | "warning";
     weight?:"regular" | "medium";
     className?: string;
     children: React.ReactNode;
@@ -42,7 +42,7 @@ export const Typography = ({
     children,
 }:Props )=> {
 
-    let variantStyles: string = "", 
+    let variantStyles: string ="", 
         colorStyles : string="";
 
     switch (variant){
@@ -106,6 +106,18 @@ export const Typography = ({
             break;
         case "secondary":
             colorStyles = "text-secondary";
+            break;
+    
+        case "danger":
+            colorStyles = "text-alert-danger";
+            break;
+    
+        case "success":
+            colorStyles = "text-alert-success";
+            break;
+    
+        case "warning":
+            colorStyles = "text-alert-warning";
             break;
     
     

@@ -5,6 +5,8 @@ import { footerLinks } from "./app-links";
 import { v4 as uuidv4 } from 'uuid';
 import { ActiveLink } from "./active-link";
 import { FooterLinks } from "@/types/app-links";
+import { LinkTypes } from "@/lib/link-type";
+import { SocilaNetworksBouttons } from "./social-networks-button";
 
 
 export const Footer = () => {
@@ -34,12 +36,12 @@ export const Footer = () => {
                 <div className="flex gap-7"> {footerNavigationList} </div>
             </Container>
             <Container className="pt-9 pb-2 space-y-2"> 
-                <hr className="text-gray"/>
+                <hr className="text-gray-800"/>
                 <div className="flex items-center justify-between">
                     <Typography variant="caption4" theme="gray">
                         {`Copyright © Marsa Maroc ${currentYear}`}
                     </Typography>
-                    <div className=""></div>
+                    <div><SocilaNetworksBouttons/></div>
                 </div>
             </Container>
         </div>
@@ -54,9 +56,9 @@ const FooterLink = ({ data }: footerLinkProps ) => {
     const  linksList = data.links.map((link) =>
         (
             <div key={uuidv4()}>
-                {link.type === "internal" && (
+                {link.type === LinkTypes.INTERNAL && (
             <ActiveLink  href={link.baseUrl}>{link.label}</ActiveLink>)}
-                 {link.type === "external" &&  (
+                 {link.type === LinkTypes.EXTERNAL &&  (
             <a href={link.baseUrl} target="_blank">{link.label}</a>
             )}
             </div>

@@ -1,4 +1,5 @@
 import { AppLinks } from "@/types/app-links";
+import { RiGoogleFill, RiLinkedinFill } from "react-icons/ri";
 
 const footerApplicationLinks: AppLinks[] = [
     {
@@ -30,17 +31,17 @@ const footerUserLinks: AppLinks[] = [
     },
     {
         label: "Connexion",
-        baseUrl: "/#",
+        baseUrl: "/connexion",
         type: "internal",
     },
     {
         label: "Inscription",
-        baseUrl: "/#",
+        baseUrl: "/connexion/inscription",
         type: "internal",
     },
     {
         label: "Mot de passe oublié",
-        baseUrl: "/#",
+        baseUrl: "/connexion/mot-de-passe-perdu",
         type: "internal",
     },
 ];
@@ -67,16 +68,18 @@ const footerInformationLinks: AppLinks[] = [
         type: "external",
     },
 ];
-const footerNetworkLinks: AppLinks[] = [
+export const footerNetworkLinks: AppLinks[] = [
     {
         label: "Linkedin",
         baseUrl: "https://fr.linkedin.com/company/marsa-maroc",
         type: "external",
+        icon: RiLinkedinFill,
     },
     {
         label: "Site web",
         baseUrl: "https://www.marsamaroc.co.ma/fr",
         type: "external",
+        icon: RiGoogleFill,
     },
     
 ];
