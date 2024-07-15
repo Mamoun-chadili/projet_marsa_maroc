@@ -11,7 +11,7 @@ import { useAuth } from "@/context/AuthUserContext"
 import { firestoreUpdateDocument } from "@/api/firestore"
 import { toast } from "react-toastify"
 import { useEffect } from "react"
-import { UpdateUserIdentificationData } from "@/api/authentication"
+
 
 export const ProfileStep = ({
         prev,
@@ -22,6 +22,7 @@ export const ProfileStep = ({
         getCurrentStep,
 }: BaseComponentProps) => {
     const { authUser } = useAuth()
+
 
     const { value: isLoading, setValue: setLoading}=useToggle()
     const {
@@ -75,24 +76,6 @@ export const ProfileStep = ({
                 expertise !== FormData.expertise || 
                 biographie !== FormData.biographie )
             {
-                if (displayName !== FormData.displayName || 
-                    authUser.displayName !==FormData.displayName
-                 ) {
-                    const data = {
-                        displayName: FormData.displayName
-                    }
-
-                    const { error } = await UpdateUserIdentificationData(
-                        authUser.uid,
-                        data
-                    )
-                        if (error) {
-                            setLoading(false)
-                            toast.error(error.message)
-                            return
-                        }
-                }
-
                 handleUpdateUserDocument(FormData)               
             }
             setLoading(false)
