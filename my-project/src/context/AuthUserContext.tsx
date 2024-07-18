@@ -15,7 +15,8 @@ const init = {
 
 const authUserContext = createContext({
     authUser: init,
-    authUserIsLoading: true
+    authUserIsLoading: true,
+    reloadUserData: () => {}
 })
 interface Props {
     children: React.ReactNode
@@ -36,7 +37,8 @@ export function AuthUserProvider({children}: Props){
                 photoURL: string ;
                 userDocument: UserDocument;
             },
-            authUserIsLoading: auth.authUserIsLoading
+            authUserIsLoading: auth.authUserIsLoading,
+            reloadUserData: auth.reloadUserData
         }}
         >
             {children}

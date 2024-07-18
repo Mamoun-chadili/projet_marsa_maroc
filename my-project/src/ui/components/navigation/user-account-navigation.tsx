@@ -17,11 +17,11 @@ export const UserAccountNavigation = () => {
     return(
         <Box className="flex flex-col gap-7">
             <div className="flex flex-col gap-3">
-                <Typography variant="caption2" weight="medium">
+                <Typography variant="caption2" weight="medium" className="flex items-center justify-center">
                     <ActiveLink href="/mon-espace">Mon compte</ActiveLink>
                 </Typography>
             </div>
-            <Button action={handelLogOutUser} variant="danger" >
+            <Button action={handelLogOutUser} variant="accent"  >
                 Déconnexion
             </Button>
         </Box>

@@ -37,7 +37,7 @@ export const Navigation = ({}:Props) => {
                     </Link>
                 <div className="flex items-center gap-7">
                     <Typography variant="caption3" component="div" className="flex items-center gap-7">
-                        <ActiveLink href="/design-system">design</ActiveLink>
+                        {/* <ActiveLink href="/design-system">design</ActiveLink> */}
                         <ActiveLink href="/utilisation">Utilisation</ActiveLink>
                         <ActiveLink href="/information">Information</ActiveLink>
                         

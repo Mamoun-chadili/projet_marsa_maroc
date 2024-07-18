@@ -1,5 +1,5 @@
 interface Props {
-    size?: "very-small" | "small" | "medium" | "large" 
+    size?: "very-small" | "small" | "medium" | "large" | "xlarge"
 }
  export const Logo = ({ size = "medium" }: Props) => {
     let sizeLogo : number;
@@ -16,6 +16,9 @@ switch (size) {
         break;
     case "large":
         sizeLogo = 140;
+        break;
+    case "xlarge":
+        sizeLogo = 400;
         break;
 
     

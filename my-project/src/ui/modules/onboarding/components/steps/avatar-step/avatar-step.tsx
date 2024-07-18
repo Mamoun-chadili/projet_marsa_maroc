@@ -8,8 +8,9 @@ import { Typography } from "@/ui/design-system/Typography/Typography"
 import { UploadAvatar } from "@/ui/components/upload-avatar/upload-avatar"
 import { useState } from "react"
 import { getDownloadURL, ref, StorageReference, uploadBytesResumable, UploadTask } from "firebase/storage"
-import { storage } from "@/config/firebaseconfig"
+import { auth, storage } from "@/config/firebaseconfig"
 import { toast } from "react-toastify"
+import { firestoreCreateDocument, firestoreUpdateDocument } from "@/api/firestore"
 
 export const AvatarStep = ({
     prev,
@@ -26,12 +27,12 @@ export const AvatarStep = ({
     const [selectedImage, setSelectedImage] = useState<File | null>(null);
     const [imagePreview,setImagePreview] = useState<string | ArrayBuffer | null>(null)
 
-    const [uploadprogress , setUploadProgess] = useState<number>(0)
-    console.log("uploadprogress::",uploadprogress)
+    const [uploadProgress , setUploadProgess] = useState<number>(0)
+    
 
     const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
-        console.log("file",file)
+        console.log("file",file);
         if (file) {
             setSelectedImage(file)
             const reader = new FileReader()
@@ -44,6 +45,25 @@ export const AvatarStep = ({
             }
             reader.readAsDataURL(file)
         }
+    }
+
+    const updateUserDocument = async (photoURL:string) => {
+        const body = {
+            photoURL: photoURL
+        }
+        // await updateUserIdentificatioData(authUser.uid,body)
+        const { error } = await firestoreUpdateDocument(
+            "users",
+            authUser.uid,
+            body
+        )
+        if (error) {
+            toggle();
+            toast.error(error.message)
+            return
+        }
+        toggle()
+        next()
     }
 
     const handleImageUpload = () => {
@@ -71,11 +91,13 @@ export const AvatarStep = ({
                 () => {
                     getDownloadURL(uploadTask.snapshot.ref).then(
                         (downloadURL)=> {
-                            console.log("::downloadURL::",downloadURL)
+                            updateUserDocument(downloadURL)
                         }
                     )
                 }
             )
+        }else {
+            next()
         }
     }
     return(
@@ -106,6 +128,8 @@ export const AvatarStep = ({
                    <UploadAvatar 
                    handleImageSelect={handleImageSelect}
                    imagePreview={imagePreview}
+                   uploadProgress={uploadProgress}
+                   isLoading={isLoading}
                    />
                 </div>
             </div>

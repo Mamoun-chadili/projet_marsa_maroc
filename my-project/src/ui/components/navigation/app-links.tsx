@@ -9,12 +9,12 @@ const footerApplicationLinks: AppLinks[] = [
     },
     {
         label: "Utilisation",
-        baseUrl: "/#",
+        baseUrl: "/utilisation",
         type: "internal",
     },
     {
         label: "Information",
-        baseUrl: "/#",
+        baseUrl: "/information",
         type: "internal",
     },
     {

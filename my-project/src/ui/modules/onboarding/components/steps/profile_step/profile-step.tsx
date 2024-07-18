@@ -21,7 +21,7 @@ export const ProfileStep = ({
         stepsList,
         getCurrentStep,
 }: BaseComponentProps) => {
-    const { authUser } = useAuth()
+    const { authUser, reloadUserData } = useAuth()
 
 
     const { value: isLoading, setValue: setLoading}=useToggle()
@@ -75,9 +75,11 @@ export const ProfileStep = ({
             if (displayName !== FormData.displayName || 
                 expertise !== FormData.expertise || 
                 biographie !== FormData.biographie )
-            {
+            { 
+
                 handleUpdateUserDocument(FormData)               
             }
+            
             setLoading(false)
             next()
          }

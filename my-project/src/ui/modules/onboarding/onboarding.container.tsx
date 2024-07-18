@@ -5,13 +5,15 @@ import { onboardingStepsListInterface } from "@/types/onboarding-steps-list"
 import { ProfileStep } from "./components/steps/profile_step/profile-step"
 import { AccountAvatarNavigationLink } from "@/ui/components/navigation/account-avatar-link"
 import { AvatarStep } from "./components/steps/avatar-step/avatar-step"
+import { FinalStep } from "./components/steps/final-step/final-step"
 
 export const OnboardingContainer = () => {
     const [currentStep,setCurrentStep] = useState<number>(1)
     const stepsList: onboardingStepsListInterface[] = [
         { id: 1, label: "Bienvenue",component: {step: WelcomeStep} },
-        { id: 2, label: "Profile",component: {step: ProfileStep } },
-        { id: 3, label: "Avatar",component: {step: AvatarStep } },
+        { id: 2, label: "Profil",component: {step: ProfileStep } },
+        { id: 3, label: "Photo",component: {step: AvatarStep } },
+        { id: 4, label: "Last Step",component: {step: FinalStep } },
     ]
 
     const getCurrentStep= () => {

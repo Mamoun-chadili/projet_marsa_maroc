@@ -18,5 +18,7 @@ export interface UserDocument {
     displayName: string;
     expertise: string;
     biographie: string;
-    
+    photoURL: string | null;
+    whatsApp: string;
+    linkedin:string;
 }

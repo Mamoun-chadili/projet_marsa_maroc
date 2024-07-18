@@ -27,4 +27,11 @@ export interface OnboardingProfileFormFieldsType {
     expertise: string;
     biographie: string;
 }
+export interface UserProfileFormFieldsType {
+    displayName: string;
+    expertise: string;
+    biographie: string;
+    whatsApp: string;
+    linkedin:string;
+}
 
