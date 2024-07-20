@@ -21,4 +21,9 @@ export interface UserDocument {
     photoURL: string | null;
     whatsApp: string;
     linkedin:string;
+    CIN_Chauffeur: string;
+    PlaqueCamion: string;
+    conteneur: string;
+    description?: string;
 }
+

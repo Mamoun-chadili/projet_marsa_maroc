@@ -27,7 +27,11 @@ export const WelcomeStep = ({
                         Bienvenue sur notre application révolutionnaire!
                         </Typography>
                         <Typography variant="body-base" component="p" theme="gray">
-                        Nous sommes ravis de vous accueillir dans notre communauté d'utilisateurs passionnés par l'innovation et l'efficacité. Avec notre application, vous pouvez désormais scanner les conteneurs au port de manière rapide et efficace, simplifiant ainsi vos opérations quotidiennes.
+                        Nous sommes ravis de vous accueillir dans notre communauté 
+                        d'utilisateurs passionnés par l'innovation et l'efficacité. 
+                        Avec notre application, vous pouvez désormais enregistrer les camions,
+                        les chaufeurs et les conteuneurs au port de manière rapide et efficace,
+                        simplifiant ainsi vos opérations quotidiennes.
                         </Typography>
                     </div>
                 </div>

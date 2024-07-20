@@ -35,3 +35,10 @@ export interface UserProfileFormFieldsType {
     linkedin:string;
 }
 
+export interface SaveCamion {
+    CIN_Chauffeur: string;
+    PlaqueCamion: string;
+    conteneur: string;
+    description?: string;
+}
+

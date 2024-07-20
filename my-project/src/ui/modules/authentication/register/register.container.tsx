@@ -61,7 +61,7 @@ export const RegisterContainer = () => {
 
     const onSubmit: SubmitHandler<RegisterFormFielsType> = async (formData) => {
         setInLoading(true);
-        console.log("formData",formData);
+       
         const { password } = formData;
        
         if(password.length <= 5) {
@@ -70,6 +70,8 @@ export const RegisterContainer = () => {
                 message:
                  "Votre mot de passe doit comporter au minimum 6 caractères"
             });
+
+            setInLoading(false)
             return;
         }
 

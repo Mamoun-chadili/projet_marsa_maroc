@@ -107,16 +107,17 @@ export const ProfileForm = ({
 
             <div className="flex justify-between">
                 <Button 
+                // ici le lien de scanne 
+                    type="button"  
+                    baseUrl="/mon-espace/index-camion" 
+                    >
+                    Enregistrer camion
+                </Button>
+                <Button 
                     isLoding={isLoading}
                     type="submit"   
                     >
-                    Scanner ICI !
-                </Button>
-                <Button 
-                // ici le lien de scanne 
-                    type="button"   
-                    >
-                    enregistrer
+                    Enregistrer profile
                 </Button>
             </div>
         </form>

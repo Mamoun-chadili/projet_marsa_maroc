@@ -29,7 +29,6 @@ export const ProfileContainer = () => {
     useEffect(() => {  
         const fieldsToUpdate: (
         |"displayName"
-        |"displayName"
         |"expertise"
         |"biographie"
         |"linkedin"
@@ -146,7 +145,7 @@ const updateUserAvatar = async ( photoURL: string) => {
             })
             return;
         }
-        const whatsAppString = formData.whatsApp.toString();
+       
 
         if (formData.whatsApp && !/^(06|05|07)\d{8}$/.test(formData.whatsApp.toString())) {
             setError("whatsApp", {

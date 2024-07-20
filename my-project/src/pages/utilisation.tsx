@@ -1,15 +1,16 @@
 import { Seo } from "@/ui/components/seo";
 import { Layout } from "@/ui/components/layout/layout";
-import { LandingPageContainer } from "@/ui/modules/landing-pages/landing-page.container";
+import { UtilisationContainer } from "@/ui/modules/utilisation-page/utilisation-page.container";
 
-export default function Utilisation() {
+
+export default function Information() {
   return (
   <>
 
-      <Seo title="Utilisation | Marsa Maroc" description="Description..."/>
+      <Seo title="Information | Marsa Maroc" description="Description..."/>
       
       <Layout isDisplayBreadcrumbs = {false}>
-         <div>utilisation page</div>
+      <UtilisationContainer/>
       </Layout>
       
   </>
