@@ -40,22 +40,24 @@ export const LoginContainer = () => {
           router.push("/mon-espace")
       };
      
-    const onSubmit: SubmitHandler<LoginFormFielsType> = async (formData) => {
+      const onSubmit: SubmitHandler<LoginFormFielsType> = async (formData) => {
         setInLoading(true);
-        const { password } = formData;
-        if(password.length <= 5) {
-          setError("password",{
-              type: "manual",
-              message:
-               "Votre mot de passe doit comporter au minimum 6 caractères"
-          });
-          setInLoading(false)
-          return;
-      }
+        const { email, password } = formData;
+
+        // Appel à la fonction pour vérifier si le mot de passe est correct
+        const { error } = await firbaseSignInUser(email, password);
+        if (error) {
+            setError("password", {
+                type: "manual",
+                message: "Mot de passe incorrect" // Message d'erreur pour mot de passe incorrect
+            });
+            setInLoading(false);
+            return;
+        }
+      
       handleSignUser(formData);
         
     };
-
 
     return(
        <LoginView

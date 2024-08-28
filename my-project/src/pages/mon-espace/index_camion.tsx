@@ -8,9 +8,9 @@ export default function AccountCamion() {
   return (
   <>
 
-      <Seo title="Enregistrement | Marsa Maroc" description="description page"/>
+      <Seo title="Enregistrement de camion | Marsa Maroc" description="description page"/>
       
-      <Layout  sessionStatus={REGISTERED}>
+      <Layout sessionStatus={REGISTERED}>
         <CamionContainer/>
       </Layout>
       

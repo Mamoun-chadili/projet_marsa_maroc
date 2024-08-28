@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const HeroTopView = () => {
     return (
-        <Container className="relative pt-40 pb-52 overflow-hidden">
+        <Container className="relative pt-24 pb-32 overflow-hidden space-y-6 ">
             <div className="w-full max_w-2xl space-y-20">
                 <Typography variant="h1" component="h1" className="max-w-lg">
                     Enregistrer votre conteneur !
@@ -19,13 +19,16 @@ export const HeroTopView = () => {
                     <Button baseUrl="/information" variant="outline">En savoir plus</Button>
                 </div>
             </div>
+
+           
             <Image
                 src="/assets/svg/Marsa-Maroc-conteneur1.svg"
                 alt="Conteneurs chez marsa maroc"
-                width={750}
+                width={650}
                 height={750}
                 className="absolute top-0 right-0 z-0"
-            />
+                />
+                
         </Container>
     );
 };
