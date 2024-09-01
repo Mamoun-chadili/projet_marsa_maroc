@@ -109,7 +109,7 @@ export const ProfileForm = ({
                 <Button 
                 // ici le lien de scanne 
                     type="button"  
-                    baseUrl="/mon-espace/index-camion" 
+                    baseUrl="/mon-espace/camion" 
                     >
                     Enregistrer camion
                 </Button>

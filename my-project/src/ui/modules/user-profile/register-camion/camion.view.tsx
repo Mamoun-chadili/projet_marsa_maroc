@@ -9,7 +9,7 @@ interface Props {
 export const CamionView = ({form}:Props) => {
     return(
     <div className="-space-y-5">
-        <Typography variant="h2" component="h1" theme="primary" className="text-center">
+        <Typography variant="h1" component="h1" theme="primary" className="text-center">
            ENREGISTRER LE CAMION
         </Typography>
         <CamionForm form={form}/>
